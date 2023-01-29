@@ -27,8 +27,8 @@ export class OrdersController {
   @Get()
   async findAll(@Response() res) {
     const user = res.locals.user;
-    const x = await this.ordersService.findAll(user.id);
-    return res.status(HttpStatus.OK).send(x);
+    const result = await this.ordersService.findAll(user.id);
+    return res.status(HttpStatus.OK).send(result);
   }
 
   @Get(':id')

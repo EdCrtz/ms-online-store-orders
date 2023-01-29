@@ -10,7 +10,7 @@ export class OrdersService {
   }
 
   async findAll(userId: string): Promise<Orders[]> {
-    const x = await this.prisma.order.findMany({
+    const ordersMany = await this.prisma.order.findMany({
       where: {
         user: {
           id: {
@@ -26,7 +26,7 @@ export class OrdersService {
         },
       },
     });
-    return x;
+    return ordersMany;
   }
 
   async findOne(id: string): Promise<Orders> {
