@@ -1,4 +1,4 @@
-class User {
+export class User {
   id?: string;
   name?: string;
   email?: string;
@@ -65,25 +65,39 @@ class Article {
 
 export class Orders {
   id: string;
-  total: number;
   createdAt: Date;
   updatedAt: Date;
   userId: string;
   articleId: string;
-
+  lat: number;
+  lon: number;
+  address: string;
+  city: string;
+  state: string;
+  postalCode: number;
   constructor(
-    id?: string,
-    total?: number,
-    createdAt?: Date,
-    updatedAt?: Date,
-    userId?: string,
-    articleId?: string,
+    id: string,
+    createdAt: Date,
+    updatedAt: Date,
+    userId: string,
+    articleId: string,
+    lat: number,
+    lon: number,
+    address: string,
+    city: string,
+    state: string,
+    postalCode: number,
   ) {
     this.id = id;
-    this.total = total;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
     this.userId = userId;
     this.articleId = articleId;
+    this.lat = lat;
+    this.lon = lon;
+    this.address = address;
+    this.city = city;
+    this.state = state;
+    this.postalCode = postalCode;
   }
 }

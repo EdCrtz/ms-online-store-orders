@@ -12,7 +12,7 @@ import {
 
 import { OrdersService } from './orders.service';
 import { Orders } from './orders';
-@Controller('api/v1/Orders')
+@Controller('api/v1/orders')
 export class OrdersController {
   constructor(private readonly ordersService: OrdersService) {}
 

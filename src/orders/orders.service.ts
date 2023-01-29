@@ -18,6 +18,13 @@ export class OrdersService {
           },
         },
       },
+      include: {
+        article: {
+          include: {
+            user: true,
+          },
+        },
+      },
     });
     return x;
   }
@@ -27,7 +34,6 @@ export class OrdersService {
   }
 
   async update(id: string, Orders: Orders): Promise<Orders> {
-    console.log(Orders);
     return this.prisma.order.update({ where: { id }, data: Orders });
   }
 
